@@ -9,7 +9,7 @@
 <body>
 <?php
     include_once "blocks/header.php";
-    include_once "blocks/author.php";
+    include_once "blocks/auth.php";
 ?>
 </body>
 

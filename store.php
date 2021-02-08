@@ -9,7 +9,7 @@
 <body>
 <?php
     include_once "blocks/header.php";
-    include_once "blocks/store_check.php";
+    include_once "blocks/store_func.php";
 ?>
 </body>
 

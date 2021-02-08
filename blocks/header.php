@@ -32,7 +32,7 @@
             <?php
             else :
             ?>
-                <a href="auth.php" class="nav-item nav-link active">Войти</a>
+                <a href="authorization.php" class="nav-item nav-link active">Войти</a>
                 <a href="registration.php" class="nav-item nav-link">Регистрация</a>
             <?php
             endif;

@@ -1,4 +1,4 @@
-<form action="blocks/author_check.php" method="POST" class="form-1">
+<form action="blocks/auth_func.php" method="POST" class="form-1">
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
     <input name="login" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter login">
