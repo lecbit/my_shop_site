@@ -1,10 +1,16 @@
 <div id="show_content"></div>
-<div id="show_content2"></div>
 
 <script>
-let id_product = 321;
+function checkout(){
+	localStorage.setItem('status','[3]');
+}
+</script>
+
+<script>
+let id_product = JSON.parse(localStorage.getItem("status"));
+//console.log(id_product);
 let data_body = "id_product=" + id_product;  
-fetch("http://mysite.local/json/info.php", { 
+fetch("http://mysite.local/ajax/info.php", { 
 	method: "POST",
     body: data_body,   
 	headers:{"content-type": "application/x-www-form-urlencoded"} 
@@ -16,6 +22,6 @@ fetch("http://mysite.local/json/info.php", {
         }   
 return response.text()
 })
-.then(i => document.getElementById('show_content2').innerHTML = i)
+.then(i => document.getElementById('show_content').innerHTML = i)
 .catch(() => console.log('ошибка')); 
 </script>

@@ -31,7 +31,7 @@
               <li>Priority email support</li>
               <li>Help center access</li>
             </ul>
-            <div class="batton" data-hren="<?php echo $news["id"]; ?>"></div>
+            <div class="batton" id="<?php echo $news["id"]; ?>" data-hren="<?php echo $news["id"]; ?>"></div>
             
           </div>
         </div>
@@ -49,7 +49,7 @@
               <li>Phone and email support</li>
               <li>Help center access</li>
             </ul>
-            <div class="batton" data-hren="<?php echo $news["id"]; ?>"></div>
+            <div class="batton" id="<?php echo $news["id"]; ?>" data-hren="<?php echo $news["id"]; ?>"></div>
           </div>
         </div>
       </div>
