@@ -1,40 +1,11 @@
 <?php
-$mysqli = false;
-function connectDB()
-{
-    global $mysqli;
-    $mysqli = new mysqli("localhost", "root", "", "my_shop_db");
-    $mysqli->query("SET NAMES 'utf-8'");
-}
 
-function closeDB()
+$link = mysqli_connect('localhost','root','','my_shop_db');
+function get_post_by_id($post_id)
 {
-    global $mysqli;
-    $mysqli->close();
-}
-
-function getNews($id)
-{
-    global $mysqli;
-    connectDB();
-    if ($id) {
-        $where = "WHERE id = " . $id;
-        $result = $mysqli->query("SELECT * FROM `items`$where ORDER BY `id` DESC");
-    } else {
-        $result = $mysqli->query("SELECT * FROM `items` ORDER BY `id` DESC");
-    }
-    closeDB();
-
-    if (!$id)
-        return resultToArray($result);
-    else
-        return $result->fetch_assoc();
-}
-
-function resultToArray($result)
-{
-    $array = array();
-    while (($row = $result->fetch_assoc()) != false)
-        $array[] = $row;
-    return $array;
+    global $link;
+    $sql = "SELECT * FROM items WHERE id = ".$post_id;
+    $result = mysqli_query($link, $sql);
+    $post = mysqli_fetch_assoc($result);
+    return $post;
 }

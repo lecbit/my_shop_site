@@ -1,114 +1,31 @@
 <div class="container">
-<div class="card-deck mb-3 text-center">
-        <div class="card mb-4 box-shadow">
+<?php
+$num = 0;
+for ($i=0; $i < 8/3; $i++) { ?>
+  <div class="card-deck mb-3 text-center">
+  <?php for ($j=0; $j < 3; $j++) { ?>
+    <div class="card mb-4 box-shadow">
           <div class="card-header">
-            <h4 class="my-0 font-weight-normal"><?php $news = getNews(1);echo $news["title"];?></h4>
-          </div>
-          <div class="card-body">
-            <div class="image">
-                <img src="public/img/11.jpg" alt="">
-            </div>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>10 users included</li>
-              <li>2 GB of storage</li>
-              <li>Email support</li>
-              <li>Help center access</li>
-            </ul>
-            <button type="button" class="btn btn-lg btn-block btn-outline-primary">Убрать из корзины</button>
-          </div>
-        </div>
-        <div class="card mb-4 box-shadow">
-          <div class="card-header">
-            <h4 class="my-0 font-weight-normal"><?php $news = getNews(2);echo $news["title"];?></h4>
+            <h4 class="my-0 font-weight-normal"><?php $news = get_post_by_id($num+1);echo $news["title"];?></h4>
           </div>
           <div class="card-body">
           <div class="image">
-                <img src="public/img/se.jpg" alt="">
-            </div>
+            <img src="<?php echo 'public/img/'.$news['image']; ?>"> 
+          </div>
             <ul class="list-unstyled mt-3 mb-4">
               <li>20 users included</li>
               <li>10 GB of storage</li>
               <li>Priority email support</li>
               <li>Help center access</li>
             </ul>
-            <div class="batton" id="<?php echo $news["id"]; ?>" data-hren="<?php echo $news["id"]; ?>"></div>
-            
+            <div class="batton" data-hren="<?php echo $news["id"]; ?>" id='<?php echo $news["id"]; ?>' idd='<?php echo $num ?>'></div>
           </div>
         </div>
-        <div class="card mb-4 box-shadow">
-          <div class="card-header">
-            <h4 class="my-0 font-weight-normal"><?php $news = getNews(3);echo $news["title"];?></h4>
-          </div>
-          <div class="card-body">
-          <div class="image">
-                <img src="public/img/x.jpg" alt="">
-            </div>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>30 users included</li>
-              <li>15 GB of storage</li>
-              <li>Phone and email support</li>
-              <li>Help center access</li>
-            </ul>
-            <div class="batton" id="<?php echo $news["id"]; ?>" data-hren="<?php echo $news["id"]; ?>"></div>
-          </div>
-        </div>
-      </div>
+        <?php $num++;
+      if($num==8){break;} } ?>
+  </div>
+<?php } ?>
 
-      <div class="card-deck mb-3 text-center">
-      <div class="card mb-4 box-shadow">
-          <div class="card-header">
-            <h4 class="my-0 font-weight-normal"><?php $news = getNews(1);echo $news["title"];?></h4>
-          </div>
-          <div class="card-body">
-          <div class="image">
-                <img src="public/img/11.jpg" alt="">
-            </div>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>20 users included</li>
-              <li>10 GB of storage</li>
-              <li>Priority email support</li>
-              <li>Help center access</li>
-            </ul>
-            <button type="button" class="btn btn-lg btn-block btn-primary">Купить</button>
-          </div>
-        </div>
-        <div class="card mb-4 box-shadow">
-          <div class="card-header">
-            <h4 class="my-0 font-weight-normal"><?php $news = getNews(2);echo $news["title"];?></h4>
-          </div>
-          <div class="card-body">
-          <div class="image">
-                <img src="public/img/se.jpg" alt="">
-            </div>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>20 users included</li>
-              <li>10 GB of storage</li>
-              <li>Priority email support</li>
-              <li>Help center access</li>
-            </ul>
-            <button type="button" class="btn btn-lg btn-block btn-primary">Купить</button>
-          </div>
-        </div>
-        <div class="card mb-4 box-shadow">
-          <div class="card-header">
-            <h4 class="my-0 font-weight-normal"><?php $news = getNews(3);echo $news["title"];?></h4>
-          </div>
-          <div class="card-body">
-          <div class="image">
-                <img src="public/img/x.jpg" alt="">
-            </div>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>30 users included</li>
-              <li>15 GB of storage</li>
-              <li>Phone and email support</li>
-              <li>Help center access</li>
-            </ul>
-            <button type="button" class="btn btn-lg btn-block btn-primary">Купить</button>
-          </div>
-        </div>
-      </div>
-
-</div>
     <!-- -->
 
     <nav aria-label="Page navigation example">
