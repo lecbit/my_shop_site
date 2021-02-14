@@ -1,8 +1,12 @@
 <div id="show_content"></div>
 
 <script>
-function checkout(){
-	localStorage.setItem('status','[3]');
+function checkout(id){
+	array = JSON.parse(localStorage.getItem("status"));
+	let temp = array.indexOf(id);
+    array.splice(temp, 1);
+	localStorage.removeItem('status');
+    localStorage.setItem('status',JSON.stringify(array));
 }
 </script>
 
