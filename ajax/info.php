@@ -14,7 +14,7 @@ function get_post_by_id($post_id)
 
 
 ?>
-
+<?php if($pieces[0]){ ?>
 <main class="page">
 <section class="shopping-cart dark">
     <div class="container">
@@ -76,3 +76,4 @@ function get_post_by_id($post_id)
     </div>
 </section>
 </main>
+<?php } ?>
