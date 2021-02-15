@@ -15,7 +15,7 @@ function get_post_by_id($post_id)
 
 ?>
 <?php if($pieces[0]){ ?>
-<main class="page">
+<main class="page" id="page">
 <section class="shopping-cart dark">
     <div class="container">
        <!-- <div class="block-heading">
@@ -28,7 +28,7 @@ function get_post_by_id($post_id)
                     <div class="items">
                     <?php for($i=0;$i<count($pieces);$i++){
                         ?>
-                        <div class="product">
+                        <div class="product" id="<?php echo $pieces[$i] ?>">
                         <div class="row">
                             <div class="col-md-3">
                                 <img class="img-fluid mx-auto d-block image" src="<?php $my = get_post_by_id($pieces[$i]); echo 'public/img/'. $my['image'] ?>">
@@ -46,12 +46,17 @@ function get_post_by_id($post_id)
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-4 quantity">
+                                        <div class="col-md-3 quantity">
                                             <label for="quantity">Quantity:</label>
                                             <input id="quantity" type="number" value ="1" class="form-control quantity-input">
                                         </div>
-                                        <div class="col-md-3 price">
+                                        <div class="col-md-2 price">
                                             <span>$120</span>
+                                        </div>
+                                        <div class="col-md-1 price">
+                                        <button type="submit" onclick="delete_i(<?php echo $pieces[$i] ?>)" class="btn btn-secondary">
+                                            <i class="fa fa-times-circle fa-2x" aria-hidden="true"></i>
+                                        </button>
                                         </div>
                                     </div>
                                 </div>
@@ -68,7 +73,7 @@ function get_post_by_id($post_id)
                         <div class="summary-item"><span class="text">Discount</span><span class="price">$0</span></div>
                         <div class="summary-item"><span class="text">Shipping</span><span class="price">$0</span></div>
                         <div class="summary-item"><span class="text">Total</span><span class="price">$360</span></div>
-                        <button type="button" onclick="checkout()" class="btn btn-primary btn-lg btn-block">Checkout</button>
+                        <button type="button" onclick="" class="btn btn-primary btn-lg btn-block">Checkout</button>
                     </div>
                 </div>
             </div> 
