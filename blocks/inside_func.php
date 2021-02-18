@@ -1,53 +1,53 @@
-<br><br>
-
-<h3 class="text-center font-weight-bold my-4">Написать комментарий</h3>
-<?php
-$data = $_POST;
-
-if(isset($data['c_sub'])){
-  if($data['c_name'] == ''){
-    echo "<div class='alert-danger'><p class='h4'>Введите имя!</p></div>";
-  }
-  elseif($data['c_email'] == ''){
-    echo "<div class='alert-danger'><p class='h4'>Введите email!</p></div>";
-  }
-  elseif($data['c_text'] == ''){
-    echo "<div class='alert-danger'><p class='h4'>Введите text!</p></div>";
-  }
-  else{
-    $connect = mysqli_connect('localhost', 'root', '', 'my_shop_db');
-    $c_id = $_GET['id'];
-    $c_name = $data['c_name'];
-    $c_email = $data['c_email'];
-    $c_text = $data['c_text'];
-    $sql2 = "INSERT INTO `coments` (`id`,`id_article` ,`name` , `text`) VALUES (NULL, '$c_id', '$c_name', '$c_text')";
-    mysqli_query($connect,$sql2);
-    echo "<div class='alert-success'><p class='h4'>Сообщение отправлено!</p></div>";
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-4 offset-md-3">
+      <div class="image-g">
+      <img src="/public/img/s21.jpg" alt="">
+    </div>
+    </div>
+      </div>
     
-  }
-}
-?>
+      <div class="row">
+        <div class="col-md-2 offset-md-2 image-mini">
+          <img src="/public/img/x.jpg" alt="">
+        </div>
+        <div class="col-md-2 image-mini">
+          <img src="/public/img/x.jpg" alt="">
+        </div>
+        <div class="col-md-2 image-mini">
+          <img src="/public/img/x.jpg" alt="">
+        </div>
+        <div class="col-md-2 image-mini">
+          <img src="/public/img/x.jpg" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      
+      <div class="h1">Name</div>
+      <span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+        <p>Description</p>
+    
+    <div class="row">
+    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+  Single toggle
+</button>
+    </div>
+    </div>
+  </div>
+</div>
 
 <div class="container">
-<form class="mx-md-4" action="" method="POST">
-  <div class="row">
-    <div class="col-md-4 mb-4">
-      <input type="text" id="name" name="c_name" class="form-control" placeholder="Имя" value="<?php echo @$_POST['c_name'] ?>">
-    </div>
-    <div class="col-md-6 mb-4">
-      <input type="email" id="email" name="c_email" class="form-control" placeholder="Email" value="<?php echo @$_POST['c_email']?>">
-    </div>
+  <div class="row justify-content-center">
+    <div class="h1">Написать отзыв</div>
   </div>
-
   <div class="row">
-    <div class="col-md-12">
-      <div class="form-group mb-4">
-        <textarea class="form-control rounded" name="c_text" id="message" rows="10" placeholder="Сообщение" value="<?php echo @$data['c_text'] ?>"></textarea>
-      </div>
-      <div>
-        <button type="submit" name="c_sub" class="btn btn-info btn-md">Отправить</button>
-      </div>
-    </div>
+    <input type="text">
   </div>
-</form>
 </div>
