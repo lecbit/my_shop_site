@@ -7,7 +7,7 @@ $limit = 6;
 $offset = $limit * ($page - 1);
 $post = get_posts($limit,$offset);
 
-for ($i=0; $i < 8/3; $i++) { ?>
+for ($i=0; $i < nums()/3; $i++) { ?>
   <div class="card-deck mb-3 text-center">
   <?php
   for ($j=0; $j < 3; $j++) { 
@@ -21,7 +21,7 @@ for ($i=0; $i < 8/3; $i++) { ?>
           </div>
           <div class="card-body">
           <div class="image">
-            <img src="<?php echo 'public/img/'.$post[$num]['image']; ?>"> 
+            <a href="inside.php?id=<?php echo $post[$num]['id'] ?>"><img src="<?php echo 'public/img/'.$post[$num]['image']; ?>"></a>
           </div>
             <ul class="list-unstyled mt-3 mb-4">
               <li>20 users included</li>

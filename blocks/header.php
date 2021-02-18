@@ -9,9 +9,9 @@
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Список</a>
                 <div class="dropdown-menu">
-                    <a href="#" class="dropdown-item">Inbox</a>
-                    <a href="#" class="dropdown-item">Sent</a>
-                    <a href="#" class="dropdown-item">Drafts</a>
+                    <a href="/category.php?name=samsung" class="dropdown-item">Samsung</a>
+                    <a href="/category.php?name=iphone" class="dropdown-item">Iphone</a>
+                    <a href="/category.php?name=xiaomi" class="dropdown-item">Xiaomi</a>
                 </div>
             </div>
         </div>
@@ -38,18 +38,6 @@
             endif;
             ?>
             <a href="store.php" class="nav-item nav-link">Корзина</a>
-            <!--  -->
-            
-            <!--  -->
         </div>
-
-        <!--  -->
-        
-        
-    
-        <!--  -->
-        
-
-
     </div>
 </nav>

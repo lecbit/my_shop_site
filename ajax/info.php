@@ -51,7 +51,7 @@ function get_post_by_id($post_id)
                                             <input id="quantity" type="number" value ="1" class="form-control quantity-input">
                                         </div>
                                         <div class="col-md-2 price">
-                                            <span>$120</span>
+                                            <span><?php echo $my['price'] ?>$</span>
                                         </div>
                                         <div class="col-md-1 price">
                                         <button type="submit" onclick="delete_i(<?php echo $pieces[$i] ?>)" class="btn btn-secondary">
