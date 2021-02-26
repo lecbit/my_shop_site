@@ -10,6 +10,26 @@ function get_post_by_id($post_id)
     return $post;
 }
 
+function get_comments($post_id)
+{
+    global $link;
+    $sql = "SELECT * FROM coments WHERE id_article = " . $post_id;
+    $result = mysqli_query($link, $sql);
+    $posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    return $posts;
+}
+
+function nums_сomment($post_id)
+{
+    global $link;
+    $sql = "SELECT count(*) FROM coments WHERE id_article = " . $post_id;
+    $result = mysqli_query($link, $sql);
+    $row = $result->fetch_row();
+    $count = $row[0];
+    return $count;
+}
+
 function get_posts($limit, $offset)
 {
     global $link;
