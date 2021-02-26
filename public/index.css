@@ -233,3 +233,34 @@ li{
   border-bottom: 1px solid rgba(34, 36, 38, .15);
 }
 
+/*STARS*/
+
+
+  
+  .stars {
+	direction: rtl;
+	margin: 0 auto;
+  }
+  .stars label {
+	cursor: pointer;
+	padding: 10px;
+	margin: 0;
+  }
+  .stars .fa {
+	color: #f1c40f;
+	text-shadow: 0 0 5px #f1c40f;
+	font-size: 30px;
+  }
+  .stars input:not(:checked) ~ label:not([for=difficulty-1]) > .fa-star {
+	display: none;
+  }
+  .stars label:hover > .fa-star-o,
+  .stars label:hover ~ label > .fa-star-o,
+  .stars input:checked ~ label > .fa-star-o {
+	display: none;
+  }
+  .stars label:hover > .fa-star,
+  .stars label:hover ~ label > .fa-star,
+  .stars input:checked ~ label > .fa-star {
+	display: inline-block !important;
+  }
